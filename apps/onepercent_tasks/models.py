@@ -15,5 +15,6 @@ class OnepercentTask(BaseTask):
     people_needed = models.PositiveIntegerField(_("people needed"), default=1, help_text=_("How many people are needed for this task?"))
 
     class Meta:
+        swappable = 'TASKS_TASK_MODEL'
         db_table = 'tasks_task'
         default_serializer = 'apps.onepercent_tasks.serializers.TaskSerializer'

@@ -246,6 +246,7 @@ INSTALLED_APPS = (
     'apps.onepercent_tasks',
     'apps.onepercent_projects',
     'apps.blogs',
+    'apps.onepercent_organizations',
 
     # bluebottle apps
     'bluebottle.accounts',
@@ -258,7 +259,9 @@ INSTALLED_APPS = (
 
     'apps.bluebottle_dashboard',
     'apps.contentplugins',
-    'apps.organizations',
+    'apps.love',
+    #'apps.organizations',
+    #'apps.projects',
     'apps.campaigns',
     'apps.fund',
     'apps.fundraisers',
@@ -292,7 +295,7 @@ INSTALLED_APPS = (
 AUTH_USER_MODEL = 'members.OnepercentUser'
 PROJECTS_PROJECT_MODEL = 'onepercent_projects.OnepercentProject'
 TASKS_TASK_MODEL = 'onepercent_tasks.OnepercentTask'
-ORGANIZATIONS_ORGANIZATION_MODEL = 'organizations.Organization'
+ORGANIZATIONS_ORGANIZATION_MODEL = 'onepercent_organizations.OnepercentOrganization'
 
 
 # A sample logging configuration. The only tangible logging

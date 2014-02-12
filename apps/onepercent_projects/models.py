@@ -398,7 +398,7 @@ class ProjectPlan(models.Model):
     image = ImageField(_("image"), max_length=255, blank=True, upload_to='project_images/', help_text=_("Main project picture"))
     video_url = models.URLField(_("video"), max_length=100, blank=True, null=True, default='', help_text=_("Do you have a video pitch or a short movie that explains your project. Cool! We can't wait to see it. You can paste the link to the YouTube or Vimeo video here"))
 
-    organization = models.ForeignKey('organizations.Organization', verbose_name=_("organisation"), blank=True, null=True)
+    organization = models.ForeignKey(settings.ORGANIZATIONS_ORGANIZATION_MODEL, verbose_name=_("organisation"), blank=True, null=True)
 
     # Crowd funding
     money_needed = models.TextField(blank=True, help_text=_("Describe in one sentence what you need the money for."))
