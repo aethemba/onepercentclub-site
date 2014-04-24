@@ -96,7 +96,8 @@ class Project(BaseProject):
     amount_needed = models.PositiveIntegerField(default=0)
 
     allow_overfunding = models.BooleanField(default=True)
-    story = models.TextField(_("story"), help_text=_("This is the help text for the story field"), blank=True, null=True)
+    story = models.TextField(_("story"), help_text=_("This is the help text for the story field"), blank=True,
+                             null=True, default=_("<h1>edc18c20ef8b7d88566bbf1f8270639a179e24b</h1><p>Ho hoho</p>"))
 
     # TODO: add
     effects = models.TextField(_("effects"), help_text=_("What will be the Impact? How will your Smart Idea change the lives of people?"), blank=True, null=True)
