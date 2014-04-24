@@ -493,7 +493,6 @@ def get_db():
     backup_dir = "/home/backups/onepercentclub-backups/onepercentsite/current"
     with cd(backup_dir):
         output = run("ls *.bz2")
-        print "Output: ", output
         try:
             filename = output.split()[0]
         except IndexError:
