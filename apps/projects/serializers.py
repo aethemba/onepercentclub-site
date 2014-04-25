@@ -1,4 +1,3 @@
-import re
 from apps.projects.models import ProjectBudgetLine
 from bluebottle.bb_accounts.serializers import UserPreviewSerializer
 from rest_framework import serializers
