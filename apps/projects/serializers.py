@@ -26,6 +26,7 @@ class StoryField(serializers.WritableField):
 
     def from_native(self, data):
         """ Saving the story text """
+        #Convert &gt; and &lt; back to HTML tags so Beautiful Soup can clean unwanted tags.
         #Script tags are sent by redactor as "&lt;;script&gt;;", Iframe tags have just one semicolon.
         data = data.replace("&lt;;", "<").replace("&gt;;", ">").replace("&lt;", "<").replace("&gt;", ">")
         soup = BeautifulSoup(data, "html.parser")
