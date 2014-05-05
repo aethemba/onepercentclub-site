@@ -104,6 +104,11 @@ class Project(BaseProject):
     for_who = models.TextField(_("for who"), help_text=_("Describe your target group"), blank=True, null=True)
     future = models.TextField(_("future"), help_text=_("How will this project be self-sufficient and sustainable in the long term?"), blank=True, null=True)
 
+    campaign_submitted  = models.DateTimeField(_('Campaign Submitted'), null=True, blank=True)
+    campaign_started = models.DateTimeField(_('Campaign Started'), null=True, blank=True)
+    campaign_ended = models.DateTimeField(_('Campaign Ended'), null=True, blank=True)
+    campaign_funded = models.DateTimeField(_('Campaign Funded'), null=True, blank=True)
+
     objects = ProjectManager()
 
     def __unicode__(self):
