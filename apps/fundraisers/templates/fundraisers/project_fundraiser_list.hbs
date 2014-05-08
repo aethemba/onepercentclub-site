@@ -4,11 +4,13 @@
 {% tplhandlebars "project_fundraiser_list" %}
     <h4>
         {% trans "Fundraisers" %}
-        <em>
-            <a {{action 'showAllFundraisers' controllers.project}}>
-                {{fundraisers.meta.total}} {% trans "Total" %}
-            </a>
-        </em>
+        {{#if fundraisers.length}}
+            <em>
+                <a {{action 'showAllFundraisers' controllers.project}}>
+                    {{fundraisers.meta.total}} {% trans "Total" %}
+                </a>
+            </em>
+        {{/if}}
     </h4>
 
     {{#if fundraisers.length}}
@@ -18,7 +20,7 @@
             {{/each}}
         </ul>
     {{/if}}
-    {{#if controllers.project.isFundable}}
+    {{#if controllers.project.isStatusCampaign}}
         {{#linkTo 'fundRaiserNew' controllers.project.id class="fundraiser-become"}}
             {% trans "Become a fundraiser" %}
         {{/linkTo}}
